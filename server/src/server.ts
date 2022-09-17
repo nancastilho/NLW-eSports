@@ -20,13 +20,13 @@ app.get('/games',async (request, response) =>{
         include:{
             _count:{
                 select:{
-                    Ads: true,
+                    ads: true,
                 }
             }
         }
     })        
 
-    return response.json([games]);
+    return response.status(200).json(games);
 });
 
 app.post('/games/:id/ads', async (request, response) =>{
